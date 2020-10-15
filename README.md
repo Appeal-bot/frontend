@@ -1,4 +1,4 @@
-# Appeal Bot - Backend
+# Appeal Bot - Frontend
 Frontend for the Appeal Bot
 
 ## Commit Message Guidelines
