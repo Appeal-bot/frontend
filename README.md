@@ -8,8 +8,10 @@ We have based the guidelines on the Angular [commit message guidelines](https://
 ## Setup
 
 Create a .env file with the following info:
-REACT_APP_NOT_SECRET_CODE=<authorize_url>
-REACT_APP_BACKEND_URL=<oauth_verify_url>
+
+``REACT_APP_DISCORD_AUTHORIZE_URL=<authorize_url>``
+``REACT_APP_BACKEND_URL=<oauth_verify_url>``
+``REACT_APP_TOKEN_NAME=<localstorage-token-name>``
 
 ## Available Scripts
 
