@@ -26,7 +26,9 @@ const currentMemberModel: MemberModel = {
   // Thunks: Http calls
   getCurrentMember: thunk((actions, token) => {
     return axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/auth/init-discord?code=${token}`, )
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/auth/init-discord?code=${token}`
+      )
       .then(({ data }) => {
         actions.setCurrentMember(data);
         localStorage.setItem(
@@ -71,18 +73,20 @@ const currentMemberModel: MemberModel = {
     return axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/appeal-info/guilds-overview`, {
         headers: {
-          Authorization: localStorage.getItem(`${process.env.REACT_APP_TOKEN_NAME}`)
-        }
+          Authorization: localStorage.getItem(
+            `${process.env.REACT_APP_TOKEN_NAME}`
+          ),
+        },
       })
       .then(({ data: bannedGuilds }) => {
-        actions.setBannedGuilds(bannedGuilds)
+        actions.setBannedGuilds(bannedGuilds);
       })
       .catch(() => {
         message.error(
           'Error! Could not fetch banned guilds, please try again!'
         );
       });
-  })
+  }),
 };
 
 export default currentMemberModel;

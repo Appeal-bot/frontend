@@ -17,9 +17,8 @@ const Authorization: FC<Props> = ({ location }) => {
   useEffect(() => {
     // Very scuffed way to fix the issue of making it the request twice but who cares
     if (!sendAuth) {
-      const params = new URLSearchParams(location?.search)
-      getCurrentMember(params.get('code') || '')
-      .catch(() => {
+      const params = new URLSearchParams(location?.search);
+      getCurrentMember(params.get('code') || '').catch(() => {
         setHasError(true);
       });
 

@@ -4,9 +4,9 @@ export interface Member {
   ID: string;
   accessToken: string;
   Email: string;
-  AvatarHash: string,
-  ProfileURL: string,
-  Username: string,
+  AvatarHash: string;
+  ProfileURL: string;
+  Username: string;
 }
 
 export interface InitAuthorization {
@@ -18,14 +18,14 @@ export interface InitAuthorization {
 }
 
 export interface guildBan {
-  user_id: string,
-  reason: null|string,
+  user_id: string;
+  reason: null | string;
   guild: {
-      id: string,
-      name: string,
-      icon_url: null|string,
-      banner_url: null|string
-  }
+    id: string;
+    name: string;
+    icon_url: null | string;
+    banner_url: null | string;
+  };
 }
 
 export interface MemberModel {
