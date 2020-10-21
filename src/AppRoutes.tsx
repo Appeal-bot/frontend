@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
 import { Router, Redirect } from '@reach/router';
-import HomePage from './pages/HomePage';
-import Dashboard from './pages/Dashboard';
-import DiscordAuth from './pages/DiscordAuth';
 import { useStoreState } from './store';
+
+// Pages
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import Authorization from './pages/Authorization';
 
 const AppRoutes: FC = () => {
   const currentMember = useStoreState((state) => state.member.currentMember);
@@ -12,8 +14,8 @@ const AppRoutes: FC = () => {
     <Router>
       {!currentMember ? (
         <>
-          <HomePage path="/" />
-          <DiscordAuth path="/discord-auth" />
+          <Home path="/" />
+          <Authorization path="/discord-auth" />
           <Redirect from="*" to="/" noThrow />
         </>
       ) : (

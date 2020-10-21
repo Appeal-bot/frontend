@@ -25,8 +25,8 @@ module.exports = override(
         '@menu-bg': '#202225',
 
         // Modal colors
-        '@modal-header-bg': '@menu-bg',
-        '@modal-footer-bg': '@menu-bg',
+        '@modal-header-bg': '#202225',
+        '@modal-footer-bg': '#202225',
         '@modal-content-bg': '#2f3136',
 
         // Select colors
@@ -34,7 +34,6 @@ module.exports = override(
         '@select-dropdown-bg': '#23272A',
         '@select-selection-item-bg': '#23272A',
         '@select-item-selected-bg': '#2f3136',
-        '@select-selection-item-bg': '#2f3136',
         '@select-item-active-bg': '#2f3136',
 
         // Card colors
