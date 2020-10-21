@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import { Button, Space } from 'antd';
-import styles from './HomePage.module.less';
+import styles from './Home.module.less';
 import { DiscordIcon } from '../../core/components/Icons';
-import logo from './logo.png';
+import logo from './../../core/logo.png';
 
 type Props = RouteComponentProps;
 
-const HomePage: FC<Props> = () => (
+const Homepage: FC<Props> = () => (
   <Space className={styles.homePage} size="large" direction="vertical">
     <img draggable="false" className={styles.logoImg} src={logo} alt="Logo" />
     <Button
@@ -22,4 +22,4 @@ const HomePage: FC<Props> = () => (
   </Space>
 );
 
-export default HomePage;
+export default Homepage;

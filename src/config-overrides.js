@@ -25,8 +25,8 @@ module.exports = override(
         '@menu-bg': '#202225',
 
         // Modal colors
-        '@modal-header-bg': '@menu-bg',
-        '@modal-footer-bg': '@menu-bg',
+        '@modal-header-bg': '#202225',
+        '@modal-footer-bg': '#202225',
         '@modal-content-bg': '#2f3136',
 
         // Select colors

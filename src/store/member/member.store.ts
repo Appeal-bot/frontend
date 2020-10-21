@@ -7,10 +7,15 @@ import axios from 'axios';
 const currentMemberModel: MemberModel = {
   // State
   currentMember: null,
+  bannedGuilds: null,
 
   // Getters & Setters
   setCurrentMember: action((state, user: any) => {
     state.currentMember = user.member;
+  }),
+
+  setBannedGuilds: action((state, bans: any) => {
+    state.bannedGuilds = bans;
   }),
 
   logoutCurrentMember: action((state) => {
@@ -58,6 +63,26 @@ const currentMemberModel: MemberModel = {
         );
       });
   }),
+
+  getBannedGuilds: thunk((actions) => {
+    if (!localStorage.getItem(`${process.env.REACT_APP_TOKEN_NAME}`))
+      return Promise.resolve('No auth token set');
+
+    return axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/appeal-info/guilds-overview`, {
+        headers: {
+          Authorization: localStorage.getItem(`${process.env.REACT_APP_TOKEN_NAME}`)
+        }
+      })
+      .then(({ data: bannedGuilds }) => {
+        actions.setBannedGuilds(bannedGuilds)
+      })
+      .catch(() => {
+        message.error(
+          'Error! Could not fetch banned guilds, please try again!'
+        );
+      });
+  })
 };
 
 export default currentMemberModel;

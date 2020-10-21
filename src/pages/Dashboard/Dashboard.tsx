@@ -1,38 +1,26 @@
 import React, { FC } from 'react';
 import { RouteComponentProps, Router } from '@reach/router';
 import { Layout } from 'antd';
-import styles from './Dashboard.module.less';
 import { useStoreState } from '../../store';
 import Navbar from './../../core/components/Navbar'
 
 // Pages
-import Home from './Home';
-
+import AppealOverview from './appeal-group/appeal-overview';
 
 type Props = RouteComponentProps;
 
 const Dashboard: FC<Props> = () => {
   const member = useStoreState(state => state.member.currentMember)
-  const { Content, Sider } = Layout;
+  const { Content } = Layout;
 
   return member? (
     <Layout>
-      <Sider
-        breakpoint="lg"
-        collapsedWidth="0"
-        onBreakpoint={broken => {
-          console.log(broken);
-        }}
-        onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
-        }}
-      >
-        <Navbar member={member} />
-      </Sider>
-      <Layout>
-        <Content className={styles.dashboard}>
+      <Navbar member={member} />
+      <Layout style={{ padding: '24px 24px 24px' }}>
+        <Content>
           <Router>
-            <Home path="*" />
+            {/* Define pages in here :D */}
+            <AppealOverview path="*" />
           </Router>
         </Content>
       </Layout>
