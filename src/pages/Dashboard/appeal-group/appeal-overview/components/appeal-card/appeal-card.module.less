@@ -1,0 +1,70 @@
+.appeal-card:first-child {
+    margin-left: 20px;
+}
+
+.appeal-card {
+    width: fit-content !important;
+    min-width: 200px;
+    max-width: 275px;
+    padding-right: 50px;
+    margin-left: 48px;
+    position: relative;
+    background-color: #23272A;
+    border: 1px solid #23272A;
+
+    border-radius: 20px;
+
+    .card-header {
+        .server-icon {
+            position: absolute !important;
+            top: -15px;
+            left: -15px;
+        }
+
+        .appeal-status {
+            position: absolute !important;
+            top: 12px;
+            right: 5px;
+        }
+    }
+
+    .card-body {
+        // Guild name
+        h3 {
+            color: rgb(182, 182, 182);
+            margin: 0;
+        }
+
+        // Ban description
+        p {
+            margin-top: 10px;
+            margin-bottom: 0px;
+            word-wrap: break-word;
+        }
+
+        margin-top: 35px;
+    }
+
+    ul .ant-card-actions {
+        border-bottom-right-radius: 50px !important;
+    }
+
+    .card-button-appeal {
+        position: absolute;
+        bottom: -10px;
+        right: -20px;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+    }
+
+    .appeal-read-more {
+        cursor: pointer;
+        color: gray;
+        font-weight: bold;
+        margin-left: -1px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

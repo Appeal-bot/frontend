@@ -34,7 +34,6 @@ module.exports = override(
         '@select-dropdown-bg': '#23272A',
         '@select-selection-item-bg': '#23272A',
         '@select-item-selected-bg': '#2f3136',
-        '@select-selection-item-bg': '#2f3136',
         '@select-item-active-bg': '#2f3136',
 
         // Card colors
