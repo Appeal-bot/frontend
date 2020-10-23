@@ -16,6 +16,12 @@ module.exports = override(
         '@text-color-secondary': '#b9b9b9',
         '@text-color': '#fff',
 
+        // Layout
+        // THe top of the navbar where the user pfp is
+        '@layout-header-background': '#2C2F33',
+        // The bottom of the navbar, closing button
+        '@layout-trigger-background': '#23272A',
+
         'layout-body-background': '@body-background',
 
         // Alert background

@@ -28,7 +28,7 @@ const AppealCard: FC<Props> = ({ data, loading, readMore }: Props) => {
 
     return (
       <p>
-        {reason.substr(0, 16)}{' '}
+        {reason.substr(0, 17)}{' '}
         <span
           className={styles['appeal-read-more']}
           onClick={() => readMore(reason)}
@@ -48,7 +48,7 @@ const AppealCard: FC<Props> = ({ data, loading, readMore }: Props) => {
             className={styles['server-icon']}
             src={data?.guild.icon_url ?? fallbackAvatar}
           />
-          <Tag className={styles['appeal-status']} color="red">
+          <Tag className={styles['appeal-status']} color="orange">
             Awaiting appeal
           </Tag>
         </div>

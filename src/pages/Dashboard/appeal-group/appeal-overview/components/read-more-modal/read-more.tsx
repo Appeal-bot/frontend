@@ -14,7 +14,9 @@ const AppealCard: FC<Props> = ({ open, text, close }: Props) => {
       wrapClassName={styles['read-more-modal']}
       visible={open}
       onCancel={close}
+      closable={false}
       footer={null}
+      width={275}
     >
       <p>{text}</p>
     </Modal>
