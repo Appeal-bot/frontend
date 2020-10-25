@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import { Button, Space } from 'antd';
 import styles from './introduction.module.less';
-import { DiscordIcon } from '../../../../core/components/Icons';
+import { DiscordIcon, DashboardIcon } from '../../../../core/components/Icons';
 
 type Props = RouteComponentProps;
 
@@ -34,6 +34,7 @@ const Introduction: FC<Props> = () => {
           Login
         </Button>
       </Space>
+      <DashboardIcon />
     </div>
   );
 };
