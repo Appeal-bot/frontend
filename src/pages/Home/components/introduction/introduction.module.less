@@ -1,0 +1,47 @@
+.introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+
+    h1 {
+        font-size: 60px;
+        margin-bottom: 25px;
+        color: @primary-color;
+    }
+
+    p {
+        color: @text-secondary-color;
+        font-size: 25px;
+
+        margin-bottom: 35px;
+    }
+
+    .invite_bot_btn, .login_btn {
+        height: fit-content;
+        font-size: 16px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .invite_bot_btn {
+        background-color: #7289DA;
+        border-color: #7289DA;
+
+        svg {
+            font-size: 40px;
+            margin-right: 5px;
+        }
+    }
+
+    .login_btn {
+        background-color: transparent;
+        border: 6px solid @primary-color;
+        color: @primary-color;
+        font-weight: bold;
+    }
+}

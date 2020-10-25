@@ -1,3 +1,4 @@
 import DiscordIcon from './DiscordIcon';
+import DashboardIcon from './DashboardIcon';
 
-export { DiscordIcon };
+export { DiscordIcon, DashboardIcon };
