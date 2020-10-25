@@ -10,15 +10,21 @@ module.exports = override(
     lessOptions: {
       javascriptEnabled: true,
       modifyVars: {
-        'body-background': '#2c2f33',
+        // Dark blue
+        'body-background': '#1E1E2C',
+
         '@btn-default-bg': '#23272A',
-        '@primary-color': '#ff024f', // This needs to be modified as we go
+
+        '@primary-color': '#FFA878', // This needs to be modified as we go
+
         '@text-color-secondary': '#b9b9b9',
+
         '@text-color': '#fff',
+        '@text-secondary-color': '#535378',
 
         // Layout
         // THe top of the navbar where the user pfp is
-        '@layout-header-background': '#2C2F33',
+        '@layout-header-background': '@body-background',
         // The bottom of the navbar, closing button
         '@layout-trigger-background': '#23272A',
 
@@ -44,7 +50,7 @@ module.exports = override(
 
         // Card colors
         '@card-head-color': '@text-color',
-        '@card-background': '#2C2F33',
+        '@card-background': '@body-background',
         '@card-actions-background': '#7289DA',
       },
     },

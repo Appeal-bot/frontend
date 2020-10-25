@@ -7,6 +7,8 @@ import styles from './Home.module.less';
 // Components
 import Navbar from './components/navbar';
 
+import Introduction from './components/introduction';
+
 type Props = RouteComponentProps;
 
 const { Header, Content } = Layout;
@@ -17,7 +19,10 @@ const Homepage: FC<Props> = () => (
       <Header className={styles['header']}>
         <Navbar />
       </Header>
-      <Content>Content</Content>
+      <Content>
+        {/* Introduction */}
+        <Introduction />
+      </Content>
     </Layout>
   </Space>
 );

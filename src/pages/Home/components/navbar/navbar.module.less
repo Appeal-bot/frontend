@@ -9,13 +9,27 @@
         justify-content: center;
 
         img {
-            width: 50px;
+            width: 75px;
             border-radius: 100%;
             margin-right: 10px;
         }
 
         h2 {
             color: @primary-color;
+        }
+    }
+
+    &__links {
+        button {
+            span {
+                color: @text-secondary-color !important;
+            }
+        }
+
+        .active {
+            span {
+                color: @primary-color !important;
+            }
         }
     }
 }

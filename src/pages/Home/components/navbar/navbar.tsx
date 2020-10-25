@@ -14,9 +14,15 @@ const Navbar: FC<Props> = () => {
         <h2>Shiro</h2>
       </div>
       <div className={styles['header__links']}>
-        <Button type="link">About</Button>
-        <Button type="link">Benefits</Button>
-        <Button type="link">Plans</Button>
+        <Button type="link" size="large" className={styles['active']}>
+          About
+        </Button>
+        <Button type="link" size="large">
+          Benefits
+        </Button>
+        <Button type="link" size="large">
+          Plans
+        </Button>
       </div>
     </div>
   );
