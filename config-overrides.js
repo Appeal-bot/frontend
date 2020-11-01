@@ -23,7 +23,7 @@ module.exports = override(
         '@text-secondary-color': '#535378',
 
         // Layout
-        // THe top of the navbar where the user pfp is
+        // The top of the navbar where the user pfp is
         '@layout-header-background': '@body-background',
         // The bottom of the navbar, closing button
         '@layout-trigger-background': '#23272A',
@@ -34,7 +34,9 @@ module.exports = override(
         '@message-notice-content-bg': '#23272A',
 
         // Dashboard navbar colors
-        '@menu-bg': '#202225',
+        '@menu-bg': '@body-background',
+        // Dashboard navbar active color
+        '@menu-item-active-bg': '@body-background',
 
         // Modal colors
         '@modal-header-bg': '@menu-bg',

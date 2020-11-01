@@ -20,17 +20,25 @@
 
     .invite_bot_btn, .login_btn {
         height: fit-content;
-        font-size: 16px;
-        border-radius: 10px;
+
+        // Center stuff
         display: flex;
         justify-content: center;
         align-items: center;
+
+        // Ant-design is stinky
+        font-size: 16px;
+        border-radius: 10px;
+        line-height: 1;
+
+        // To give spacing for the SVG of the dashboard
         margin-bottom: 50px;
     }
 
     .invite_bot_btn {
         background-color: #7289DA;
         border-color: #7289DA;
+        padding: 10px 20px;
 
         svg {
             font-size: 40px;
@@ -40,8 +48,8 @@
 
     .login_btn {
         background-color: transparent;
-        border: 6px solid @primary-color;
+        border: 5px solid @primary-color;
         color: @primary-color;
-        font-weight: bold;
+        padding: 18px 20px;
     }
 }

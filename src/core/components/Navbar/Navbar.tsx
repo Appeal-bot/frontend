@@ -1,17 +1,17 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { navigate } from '@reach/router';
 import { MenuInfo } from 'rc-menu/lib/interface.d';
-import { LogoutOutlined, HomeOutlined } from '@ant-design/icons';
+import { LogoutOutlined } from '@ant-design/icons';
+
 import styles from './Navbar.module.less';
 import { useStoreActions } from '../../../store';
-import { Member } from '../../../store/member';
 
-interface Prop {
-  member: Member;
-}
+import Logo from './../../logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faServer, faStickyNote } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar: FC<Prop> = ({ member }) => {
+const Navbar: FC = () => {
   const [Collapse, SetCollapsed] = useState(false);
   const { Sider } = Layout;
 
@@ -20,45 +20,83 @@ const Navbar: FC<Prop> = ({ member }) => {
       case 'logout':
         logoutCurrentMember(null);
         break;
-      case 'home':
+      case 'overview':
         navigate('/dashboard/');
         break;
     }
+
+    // It needs 5ms delay because yes.
+    setTimeout(() => {
+      moveActivePage();
+    }, 5);
   };
+
+  useEffect(() => {
+    // It needs 5ms delay because yes.
+    setTimeout(() => {
+      moveActivePage();
+    }, 5);
+  });
 
   const logoutCurrentMember = useStoreActions(
     (actions) => actions.member.logoutCurrentMember
   );
 
+  const getOffset = (el) => {
+    const rect = el.getBoundingClientRect();
+
+    return rect.top + 0;
+  };
+
+  const moveActivePage = () => {
+    const element: any = document.querySelector('.ant-menu-item-selected');
+    const moveElement: any = document.querySelector(
+      `.${styles.moveActiveThing}`
+    );
+
+    if (moveElement == null || element === null) return;
+
+    moveElement.style.top = `${getOffset(element)}px`;
+  };
+
   return (
     <Sider
       breakpoint="lg"
-      collapsible
       collapsed={Collapse}
-      onBreakpoint={(broken) => {
-        console.log(broken);
-      }}
       onCollapse={SetCollapsed}
+      className={styles.dashboardNavbar}
       width={256}
     >
-      <div className={styles.userSection}>
-        <img src={member.ProfileURL} alt="" />
-        <div className={styles.userSection__info}>
-          <span>{member.Username}</span>
+      <div className={styles.companySection}>
+        <img src={Logo} alt="" />
+        <div className={styles.companySection__info}>
+          <span>Shiro</span>
         </div>
       </div>
+      <div className={styles.moveActiveThing}></div>
       <Menu
         onClick={handleClick}
-        defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
+        defaultSelectedKeys={['overview']}
         mode="inline"
+        className={styles.dashboardMenu}
         style={{ height: '100vh', borderRight: 0 }}
       >
-        <Menu.Item className={styles.logout} key="home" icon={<HomeOutlined />}>
-          Appeal overview
+        <Menu.Item
+          className={styles.menuItem}
+          key="overview"
+          icon={<FontAwesomeIcon icon={faServer} />}
+        >
+          Servers
         </Menu.Item>
         <Menu.Item
-          className={styles.logout}
+          className={styles.menuItem}
+          key="home"
+          icon={<FontAwesomeIcon icon={faStickyNote} />}
+        >
+          Appeals
+        </Menu.Item>
+        <Menu.Item
+          className={styles.menuItemLogout}
           key="logout"
           icon={<LogoutOutlined />}
         >

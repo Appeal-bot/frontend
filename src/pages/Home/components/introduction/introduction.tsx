@@ -31,7 +31,7 @@ const Introduction: FC<Props> = () => {
           size="large"
           className={styles.login_btn}
         >
-          Login
+          DASHBOARD
         </Button>
       </Space>
       <DashboardIcon />

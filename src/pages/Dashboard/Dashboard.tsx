@@ -5,7 +5,7 @@ import { useStoreState } from '../../store';
 import Navbar from './../../core/components/Navbar';
 
 // Pages
-import AppealOverview from './appeal-group/appeal-overview';
+import BanOverview from './appeal-group/ban-overview';
 
 type Props = RouteComponentProps;
 
@@ -15,12 +15,12 @@ const Dashboard: FC<Props> = () => {
 
   return member ? (
     <Layout>
-      <Navbar member={member} />
+      <Navbar />
       <Layout style={{ padding: '24px 24px 24px' }}>
         <Content>
           <Router>
             {/* Define pages in here :D */}
-            <AppealOverview path="*" />
+            <BanOverview path="*" />
           </Router>
         </Content>
       </Layout>

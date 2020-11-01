@@ -1,5 +1,5 @@
-import AppealOverview from './appeal-overview';
+import BanOverview from './ban-overview';
 
-export { AppealOverview };
+export { BanOverview };
 
 export default {};

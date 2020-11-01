@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import { Row } from 'antd';
 import { useStoreActions, useStoreState } from '../../../../store';
-import styles from './appeal-overview.module.less';
+import styles from './ban-overview.module.less';
 
 // Components
 import BannedGuildCard from './components/appeal-card';
@@ -10,7 +10,7 @@ import ReadMoreModal from './components/read-more-modal';
 
 type Props = RouteComponentProps;
 
-const AppealOverview: FC<Props> = () => {
+const BanOverview: FC<Props> = () => {
   const [loading, setLoading] = useState(true);
   const [openReadMore, setOpenReadMore] = useState(false);
   const [reasonReadMore, setReasonReadMore] = useState('');
@@ -66,4 +66,4 @@ const AppealOverview: FC<Props> = () => {
   ) : null;
 };
 
-export default AppealOverview;
+export default BanOverview;
